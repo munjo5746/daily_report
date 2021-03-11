@@ -31,5 +31,9 @@ fn main() {
         tasks,
     };
 
+    // create daily_report directory
+    let home_dir = dirs::home_dir().unwrap().join(".daily_report");
+    std::fs::create_dir_all(home_dir).expect("directory for daily report could not be created.");
+
     println!("{:?}", report)
 }
